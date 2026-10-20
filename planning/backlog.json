@@ -1,0 +1,649 @@
+{
+  "project_slug": "listcheck",
+  "project_name": "ListCheck",
+  "track": "quick",
+  "first_public_result_month": 4,
+  "total_hours": 640,
+  "reserve_hours": 64,
+  "milestones": [
+    {
+      "id": "M1",
+      "title": "Scope, rights and foundations",
+      "description": "Month 1 after activation: narrow job, rights gates, contracts and 32-image smoke path; 64 work hours."
+    },
+    {
+      "id": "M2",
+      "title": "Objective browser baseline",
+      "description": "Month 2: safe browser engine, evidence UI and 200-image dev baseline; 64 work hours."
+    },
+    {
+      "id": "M3",
+      "title": "Frozen evaluation and internal candidate",
+      "description": "Month 3: frozen holdout, optional public-data evaluation and internal candidate; 64 work hours."
+    },
+    {
+      "id": "M4",
+      "title": "First functional public result",
+      "description": "Month 4: reproducible functional public demo/artifact; never before month 3; 64 work hours."
+    },
+    {
+      "id": "M5",
+      "title": "Batch and review MVP",
+      "description": "Month 5: bounded catalog batches, review, exports and policy versions; 64 work hours."
+    },
+    {
+      "id": "M6",
+      "title": "Pilot-ready package",
+      "description": "Month 6: compatibility, generated pilot materials and technical readiness; 64 work hours."
+    },
+    {
+      "id": "M7",
+      "title": "Use-case evidence and value decision",
+      "description": "Month 7: optional external study or explicit no-evidence branch and value decision; 64 work hours."
+    },
+    {
+      "id": "M8",
+      "title": "Bounded improvement and operations",
+      "description": "Month 8: one limited improvement cycle and sustainable operations; 64 work hours."
+    },
+    {
+      "id": "M9",
+      "title": "Technical completion and final stop/go",
+      "description": "Months 9–10: independent technical audit, budget closure and handoff; absolute stop month 12; 64 work hours."
+    }
+  ],
+  "issues": [
+    {
+      "id": "LC-001",
+      "title": "Freeze the catalog-review job",
+      "body": "## Goal\nFreeze the catalog-review job within the approved ListCheck scope.\n\n## Steps\nDefine one persona, repeated review job, five falsifiable assumptions, false-rejection cost and excluded features.\n\n## Outputs\n`docs/PRODUCT_BRIEF.md`.\n\n## Acceptance and validation\nOne input/output workflow and measurable rework-time hypothesis; exclusions match plan section 1. Review each proposed feature against the boundary.\n\n## Dependencies\nNone; implementation must first be activated.\n\n## Pitfalls\nPublic descriptions do not establish demand; no OCR, editing or compliance certification.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-001.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M1",
+      "depends_on": [],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "discovery"
+    },
+    {
+      "id": "LC-002",
+      "title": "Timebox product discovery",
+      "body": "## Goal\nTimebox product discovery within the approved ListCheck scope.\n\n## Steps\nPrepare a 15-minute interview script; inspect dated primary workflow descriptions; conduct up to five voluntary conversations only when outreach is authorized.\n\n## Outputs\n`docs/discovery/script.md`, `docs/discovery/evidence.md`.\n\n## Acceptance and validation\nSeparate observed statements from assumptions and record actual participation. Check source dates; zero participants selects the explicit prototype-only evidence branch.\n\n## Dependencies\nLC-001\n\n## Pitfalls\nNo automatic messaging, private-photo request or user dataset curation.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-002.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M1",
+      "depends_on": [
+        "LC-001"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "discovery"
+    },
+    {
+      "id": "LC-003",
+      "title": "Define operation-specific rights gates",
+      "body": "## Goal\nDefine operation-specific rights gates within the approved ListCheck scope.\n\n## Steps\nCreate rights records and allow/deny/unknown gates; seed self-authored primitive assets and the explicit no-weights baseline.\n\n## Outputs\n`data/rights.json`, `schemas/rights.schema.json`, `docs/LICENSING.md`.\n\n## Acceptance and validation\nSeparate code/model-code/runtime/weights/data/annotation/assets. Validate allowed, denied and unknown examples; review source evidence for each allowed operation.\n\n## Dependencies\nLC-001\n\n## Pitfalls\nPublic availability is not permission; noncommercial terms do not automatically allow commercial evaluation or R&D.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-003.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M1",
+      "depends_on": [
+        "LC-001"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "rights"
+    },
+    {
+      "id": "LC-004",
+      "title": "Specify schemas and decision semantics",
+      "body": "## Goal\nSpecify schemas and decision semantics within the approved ListCheck scope.\n\n## Steps\nWrite types and JSON schemas for policy, scene, worker messages, results and review reports; define coordinates and decision precedence.\n\n## Outputs\n`src/contracts/types.ts`, `schemas/policy.schema.json`, `schemas/scene.schema.json`, `schemas/result.schema.json`, `schemas/worker.schema.json`, `schemas/review.schema.json`.\n\n## Acceptance and validation\nRun tests/contracts.test.ts for versions, ranges and JSON round trips; examples cover fail/review/pass_scoped, alpha and unavailable checks.\n\n## Dependencies\nLC-001, LC-003\n\n## Pitfalls\nNo artificial confidence probabilities; synthetic severity cannot become a human-acceptability label.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-004.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M1",
+      "depends_on": [
+        "LC-001",
+        "LC-003"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "contracts"
+    },
+    {
+      "id": "LC-005",
+      "title": "Pin toolchain and complete learning spike",
+      "body": "## Goal\nPin toolchain and complete learning spike within the approved ListCheck scope.\n\n## Steps\nExercise Canvas/Worker behavior; pin supported Node LTS, TypeScript, Vite, Vitest, Playwright and Ajv after distribution-license checks.\n\n## Outputs\n`package.json`, `package-lock.json`, `.nvmrc`, `tsconfig.json`, `vite.config.ts`, `docs/DEVELOPMENT.md`, `data/rights.json`.\n\n## Acceptance and validation\nClean npm ci, typecheck, test and build skeleton succeed. Record exact versions/browser revision, actual platform and dependency rights.\n\n## Dependencies\nLC-003\n\n## Pitfalls\nDo not introduce React, OpenCV, pretrained weights or external assets; learning time is included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-005.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M1",
+      "depends_on": [
+        "LC-003"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "foundation"
+    },
+    {
+      "id": "LC-006",
+      "title": "Build independent geometric oracles",
+      "body": "## Goal\nBuild independent geometric oracles within the approved ListCheck scope.\n\n## Steps\nImplement analytic rectangle/circle, clipping and direct border-pixel oracles separately from production metrics.\n\n## Outputs\n`tools/oracle.ts`, `tests/oracle.test.ts`, `tests/fixtures/geometry.json`.\n\n## Acceptance and validation\nAt least 12 explicit cases cover empty masks, off-canvas shapes, pixel-edge conventions and rotation. Assert independently derived areas/coordinates and inspect deliberate wrong values.\n\n## Dependencies\nLC-004, LC-005\n\n## Pitfalls\nVisible masks differ from amodal geometry; shared detector logic would make the oracle circular.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-006.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M1",
+      "depends_on": [
+        "LC-004",
+        "LC-005"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "data"
+    },
+    {
+      "id": "LC-007",
+      "title": "Generate the 32-image smoke corpus",
+      "body": "## Goal\nGenerate the 32-image smoke corpus within the approved ListCheck scope.\n\n## Steps\nRender seeded primitives and masks with scene/base IDs, exact geometry, transformations and RGBA/encoded hashes.\n\n## Outputs\n`tools/generate.ts`, `tools/scenes.ts`, `data/generated/smoke/manifest.jsonl`, `tests/generator.test.ts`.\n\n## Acceptance and validation\nGenerate smoke twice using pinned Chromium; metadata and RGBA hashes agree, schemas validate, and corpus stays within 20 MiB. Review automatic contact sheet.\n\n## Dependencies\nLC-003, LC-004, LC-005, LC-006\n\n## Pitfalls\nNo fonts or external imagery; viewing failures must not introduce manual labels or cherry-picked samples.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-007.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M1",
+      "depends_on": [
+        "LC-003",
+        "LC-004",
+        "LC-005",
+        "LC-006"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "data"
+    },
+    {
+      "id": "LC-008",
+      "title": "Add planning checks and CI definition",
+      "body": "## Goal\nAdd planning checks and CI definition within the approved ListCheck scope.\n\n## Steps\nCreate budget/DAG/schema validator, small-fixture CI definition, status ledger and evidence template; leave activation unset until selection.\n\n## Outputs\n`tools/check-backlog.ts`, `.github/workflows/checks.yml`, `planning/status.json`, `docs/reviews/TEMPLATE.md`.\n\n## Acceptance and validation\nnpm run budget:check verifies exact schema, totals and references. Local CI-equivalent commands pass; status distinguishes ready/done/blocked and reserve draws.\n\n## Dependencies\nLC-004, LC-005, LC-007\n\n## Pitfalls\nRepository existence is not activation. Parent owns shared agent instructions; do not recreate them.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-008.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M1",
+      "depends_on": [
+        "LC-004",
+        "LC-005",
+        "LC-007"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "foundation"
+    },
+    {
+      "id": "LC-009",
+      "title": "Implement bounded image decoding",
+      "body": "## Goal\nImplement bounded image decoding within the approved ListCheck scope.\n\n## Steps\nSniff JPEG/PNG headers, enforce size limits before allocation, normalize orientation and produce upright RGBA with alpha detection.\n\n## Outputs\n`src/io/decode.ts`, `tests/decode.test.ts`, `tests/e2e/decode.spec.ts`.\n\n## Acceptance and validation\nTest orientations 1–8, corrupt/truncated/animated inputs and oversized headers. Enforce 10 MiB, 24MP and 8192-side limits; unsupported input returns structured errors.\n\n## Dependencies\nLC-004, LC-005, LC-007\n\n## Pitfalls\nDo not export EXIF or silently treat unsupported color/animation behavior as valid.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-009.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M2",
+      "depends_on": [
+        "LC-004",
+        "LC-005",
+        "LC-007"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "engine"
+    },
+    {
+      "id": "LC-010",
+      "title": "Implement objective image measurements",
+      "body": "## Goal\nImplement objective image measurements within the approved ListCheck scope.\n\n## Steps\nCompute dimensions/aspect, border distance fraction/variance, luma clipping and fixed-scale Laplacian variance as pure functions.\n\n## Outputs\n`src/metrics/quality.ts`, `src/metrics/border.ts`, `tests/metrics.test.ts`.\n\n## Acceptance and validation\nAnalytic uniform/step-pattern fixtures match independent oracle within explicit numeric tolerances. Downsample mapping is tested; textureless sharpness interpretation stays undefined.\n\n## Dependencies\nLC-006, LC-009\n\n## Pitfalls\nNoise can increase sharpness scores; border pixels are not the entire background.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-010.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M2",
+      "depends_on": [
+        "LC-006",
+        "LC-009"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "engine"
+    },
+    {
+      "id": "LC-011",
+      "title": "Implement conservative foreground estimate",
+      "body": "## Goal\nImplement conservative foreground estimate within the approved ListCheck scope.\n\n## Steps\nImplement border-connected flood fill, components, threshold-stability comparison and eligibility reasons using plan thresholds.\n\n## Outputs\n`src/metrics/foreground.ts`, `tests/foreground.test.ts`.\n\n## Acceptance and validation\nWhite-on-white, empty/unstable masks and multiple components yield review eligibility; plain fixtures return normalized boxes. Test shadows, low contrast and edge-connected objects.\n\n## Dependencies\nLC-006, LC-009, LC-010\n\n## Pitfalls\nComponents are not object counts; an absorbed or missing subject cannot imply safe crop.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-011.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M2",
+      "depends_on": [
+        "LC-006",
+        "LC-009",
+        "LC-010"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "engine"
+    },
+    {
+      "id": "LC-012",
+      "title": "Implement policies and analysis aggregation",
+      "body": "## Goal\nImplement policies and analysis aggregation within the approved ListCheck scope.\n\n## Steps\nMap B0/B1 measurements into hard rules, advisory review and normalized evidence; seed the internal generic policy and deterministic hashes.\n\n## Outputs\n`src/policy/evaluate.ts`, `src/core/analyze.ts`, `policies/generic-catalog-v1.json`, `tests/policy.test.ts`.\n\n## Acceptance and validation\nTruth-table tests cover hard-fail precedence, disabled rules and unavailable measurements; crop/blur never hard-fail. Overlay coordinates map back to original dimensions.\n\n## Dependencies\nLC-004, LC-010, LC-011\n\n## Pitfalls\nAnalyzer receives no seed, mask or truth; generic policy is not a marketplace's official rule.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-012.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M2",
+      "depends_on": [
+        "LC-004",
+        "LC-010",
+        "LC-011"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "engine"
+    },
+    {
+      "id": "LC-013",
+      "title": "Add worker lifecycle and cancellation",
+      "body": "## Goal\nAdd worker lifecycle and cancellation within the approved ListCheck scope.\n\n## Steps\nWire transfer-buffer requests/results/errors, cancellation, timeout replacement and stale-ID protection.\n\n## Outputs\n`src/worker/analyze.worker.ts`, `src/worker/client.ts`, `tests/e2e/worker.spec.ts`.\n\n## Acceptance and validation\nCancel meets one-second target; ten-second timeout recovers; replacement cannot display stale results. Exercise malformed requests, cancel during decode/analysis and buffer cleanup.\n\n## Dependencies\nLC-009, LC-012\n\n## Pitfalls\nSynchronously busy workers may need termination; do not rely solely on an unprocessed cancel message.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-013.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M2",
+      "depends_on": [
+        "LC-009",
+        "LC-012"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "runtime"
+    },
+    {
+      "id": "LC-014",
+      "title": "Build single-image evidence UI",
+      "body": "## Goal\nBuild single-image evidence UI within the approved ListCheck scope.\n\n## Steps\nAdd local selection, generated examples, rule summaries, original-image overlays, inspection suggestions and scoped-pass copy.\n\n## Outputs\n`src/main.ts`, `src/ui/review.ts`, `src/ui/styles.css`, `index.html`, `tests/e2e/review.spec.ts`.\n\n## Acceptance and validation\nKeyboard flow and pass/fail/review/error/replacement journeys work. Evidence aligns with upright image; unsupported reasons are visible and pass wording matches plan.\n\n## Dependencies\nLC-012, LC-013\n\n## Pitfalls\nNo automatic enhancement or upload; a selected-check pass cannot imply listing acceptance.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-014.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M2",
+      "depends_on": [
+        "LC-012",
+        "LC-013"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "interface"
+    },
+    {
+      "id": "LC-015",
+      "title": "Add JSON export and session cleanup",
+      "body": "## Goal\nAdd JSON export and session cleanup within the approved ListCheck scope.\n\n## Steps\nExport schema-valid results using session aliases; separate operator acknowledgments and release object URLs/buffers on reset.\n\n## Outputs\n`src/export/report.ts`, `src/ui/session.ts`, `tests/export.test.ts`, `tests/e2e/retention.spec.ts`.\n\n## Acceptance and validation\nRound-trip schema tests pass; exports omit pixels, EXIF and full filenames. Repeated select/reset removes active previews without modifying original files.\n\n## Dependencies\nLC-004, LC-014\n\n## Pitfalls\nReviewer notes are not training labels; export timestamps must not obscure deterministic engine comparisons.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-015.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M2",
+      "depends_on": [
+        "LC-004",
+        "LC-014"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "interface"
+    },
+    {
+      "id": "LC-016",
+      "title": "Expand dev fixtures and record B0",
+      "body": "## Goal\nExpand dev fixtures and record B0 within the approved ListCheck scope.\n\n## Steps\nGenerate 200 dev fixtures; implement the initial evaluation runner, capture B0 outputs and timings, and reserve held-out families before tuning.\n\n## Outputs\n`tools/evaluate.ts`, `data/config/dev.json`, `reports/dev/baseline.json`, `reports/dev/baseline.md`, `tests/leakage.test.ts`.\n\n## Acceptance and validation\nAll records validate; paired transformations and denominators are preserved. Generate and evaluate dev set; leakage test rejects derivative/family overlap.\n\n## Dependencies\nLC-007, LC-010, LC-012, LC-015\n\n## Pitfalls\nRecord every failure, not selected successes; synthetic corruption severity does not establish customer acceptability.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-016.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 8,
+      "milestone": "M2",
+      "depends_on": [
+        "LC-007",
+        "LC-010",
+        "LC-012",
+        "LC-015"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1"
+      ],
+      "phase": "evaluation"
+    },
+    {
+      "id": "LC-017",
+      "title": "Freeze holdout and meaningful evaluation",
+      "body": "## Goal\nFreeze holdout and meaningful evaluation within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: configure 600 images/200 base scenes, balanced hard-rule counts and disjoint families. 8h: compare B0/B1/naive baselines and implement intervals/reports.\n\n## Outputs\n`data/config/holdout-v1.json`, `tools/evaluate.ts`, `reports/holdout-v1/metrics.json`, `reports/holdout-v1/report.md`, `tests/evaluation.test.ts`.\n\n## Acceptance and validation\nPlan counts and gates are scored with coverage and clustered uncertainty. Inject wrong boxes, always-pass and always-review outputs; harness exposes failures.\n\n## Dependencies\nLC-006, LC-012, LC-016\n\n## Pitfalls\nVariants are correlated; absent/unknown labels cannot count correct. Child slices are included in the epic.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-017.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M3",
+      "depends_on": [
+        "LC-006",
+        "LC-012",
+        "LC-016"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "evaluation"
+    },
+    {
+      "id": "LC-018",
+      "title": "Evaluate optional public annotations",
+      "body": "## Goal\nEvaluate optional public annotations within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: implement deterministic metadata selection and rights gate. 8h: run approved 20-then-100-image subset or report skipped branch and synthetic domain-shift analysis.\n\n## Outputs\n`tools/public-data.ts`, `data/public/approved.jsonl`, `data/public/exclusions.jsonl`, `reports/public/report.md`, `tests/public-data.test.ts`.\n\n## Acceptance and validation\nTest denied/unknown rights, duplicate IDs and unknown flags. Save exact eligible IDs; empty approval list yields zero samples and no fabricated score.\n\n## Dependencies\nLC-003, LC-016\n\n## Pitfalls\nExisting annotations are allowed, but cannot label listing suitability. No manual curation or assumed NC commercial-R&D rights; slices are inclusive.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-018.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M3",
+      "depends_on": [
+        "LC-003",
+        "LC-016"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "evaluation"
+    },
+    {
+      "id": "LC-019",
+      "title": "Evaluate advisory robustness and fallback",
+      "body": "## Goal\nEvaluate advisory robustness and fallback within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: measure crop IoU/margins, review coverage and texture-stratified blur ranks. 8h: demote failed features to experimental panel and verify regressions.\n\n## Outputs\n`reports/holdout-v1/robustness.md`, `reports/holdout-v1/gallery/index.html`, `tests/advisory.test.ts`.\n\n## Acceptance and validation\nEvery planned stress family and failed case appears; plan gates are explicitly scored. Always-review cannot pass via low coverage. Undefined rank cases are reported.\n\n## Dependencies\nLC-011, LC-017\n\n## Pitfalls\nNo holdout retuning or calibrated-confidence claims; fallback changes presentation/scope, not truth. Child slices are included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-019.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M3",
+      "depends_on": [
+        "LC-011",
+        "LC-017"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "evaluation"
+    },
+    {
+      "id": "LC-020",
+      "title": "Prepare internal release candidate",
+      "body": "## Goal\nPrepare internal release candidate within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: integrate evidence, limitation copy and release checklist. 8h: run candidate regression, keyboard/accessibility review and scope decision.\n\n## Outputs\n`docs/RELEASE_CHECKLIST.md`, `docs/LIMITATIONS.md`, `tests/e2e/candidate.spec.ts`, `reports/candidate.md`.\n\n## Acceptance and validation\nEvery capability links to evidence; focus, contrast and error feedback are checked. Typecheck/unit/browser suites and local walkthrough pass or scope narrows explicitly.\n\n## Dependencies\nLC-017, LC-018, LC-019, LC-015\n\n## Pitfalls\nPolish is not customer validation; date remains relative to activation. No functional release before month 3; slices are inclusive.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-020.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M3",
+      "depends_on": [
+        "LC-017",
+        "LC-018",
+        "LC-019",
+        "LC-015"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "release"
+    },
+    {
+      "id": "LC-021",
+      "title": "Package static demo and deployment procedure",
+      "body": "## Goal\nPackage static demo and deployment procedure within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: build self-contained dist with /cv-listcheck/ asset/worker paths. 8h: verify current host terms, document deployment/rollback and local runnable fallback.\n\n## Outputs\n`vite.config.ts`, `docs/DEPLOYMENT.md`, `.github/workflows/demo.yml`, `tests/e2e/subpath.spec.ts`, `reports/deployment-check.md`.\n\n## Acceptance and validation\nProduction subpath/offline-processing tests pass; artifact hashes and rollback steps recorded. GitHub Pages eligibility is checked before use; access blockers stay explicit.\n\n## Dependencies\nLC-020, LC-003\n\n## Pitfalls\nRepository already exists but implementation is inactive. No paid SaaS hosting assumption; child slices are included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-021.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M4",
+      "depends_on": [
+        "LC-020",
+        "LC-003"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "deployment"
+    },
+    {
+      "id": "LC-022",
+      "title": "Verify privacy and resource limits",
+      "body": "## Goal\nVerify privacy and resource limits within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: exercise request interception, hostile files and cleanup. 8h: profile CPU timing/memory and apply bounded performance fixes.\n\n## Outputs\n`tests/e2e/privacy.spec.ts`, `tests/e2e/performance.spec.ts`, `docs/SECURITY.md`, `reports/performance.md`.\n\n## Acceptance and validation\nZero image egress; limits/cancel/recovery pass. Report actual device, p50/p95, repeated-selection memory observations and low-resource fallback when targets fail.\n\n## Dependencies\nLC-013, LC-020, LC-021\n\n## Pitfalls\nHeap readings may be approximate; do not claim guaranteed RAM bounds or retune benchmark thresholds. Slices are included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-022.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M4",
+      "depends_on": [
+        "LC-013",
+        "LC-020",
+        "LC-021"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "verification"
+    },
+    {
+      "id": "LC-023",
+      "title": "Write release cards and reproduction guide",
+      "body": "## Goal\nWrite release cards and reproduction guide within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: write engine/data cards, notices and walkthrough. 8h: perform clean installation/generation/evaluation/build and evidence review.\n\n## Outputs\n`docs/ENGINE_CARD.md`, `docs/DATA_CARD.md`, `docs/REPRODUCING.md`, `THIRD_PARTY_NOTICES.md`, `reports/release-v0.1.md`.\n\n## Acceptance and validation\nAll inputs/versions and attribution are documented; no-weights status explicit. Reproduction hashes/commands are recorded; synthetic/public/customer claims remain separate.\n\n## Dependencies\nLC-017, LC-018, LC-021, LC-022\n\n## Pitfalls\nSource licenses do not clear every distribution or dataset. No scores may be invented; child slices are included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-023.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M4",
+      "depends_on": [
+        "LC-017",
+        "LC-018",
+        "LC-021",
+        "LC-022"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "documentation"
+    },
+    {
+      "id": "LC-024",
+      "title": "Deliver month-four functional public result",
+      "body": "## Goal\nDeliver month-four functional public result within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: finalize artifact, checklist and changelog. 8h: authorized publication and independent-access smoke, or precise blocked-publication handoff.\n\n## Outputs\n`CHANGELOG.md`, `docs/releases/v0.1.md`, `reports/public-release.md`, `planning/status.json`.\n\n## Acceptance and validation\nTarget month 4: stranger can run tagged demo/artifact; verified URL/hash recorded. Test packaged build and actual public access; absent authority leaves public outcome blocked.\n\n## Dependencies\nLC-020, LC-021, LC-022, LC-023\n\n## Pitfalls\nPlanning repository existence is not functional delivery. Local readiness never implies publication; no remote action in this planning task. Slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-024.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M4",
+      "depends_on": [
+        "LC-020",
+        "LC-021",
+        "LC-022",
+        "LC-023"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "release"
+    },
+    {
+      "id": "LC-025",
+      "title": "Implement bounded batch queue",
+      "body": "## Goal\nImplement bounded batch queue within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: queue and resource caps. 8h: batch progress/cancel interface. 8h: parity/soak checks and documentation.\n\n## Outputs\n`src/batch/queue.ts`, `src/ui/batch.ts`, `tests/batch.test.ts`, `tests/e2e/batch.spec.ts`.\n\n## Acceptance and validation\nSequential 50-file and 250 MiB caps enforced; corrupt files do not discard valid results; cancel/restart works. Compare batch results with single-image outputs.\n\n## Dependencies\nLC-024, LC-013, LC-015\n\n## Pitfalls\nNo concurrency expansion or retention of every decoded image. Memory cleanup and mixed-validity batches require evidence; child slices are included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-025.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 24,
+      "milestone": "M5",
+      "depends_on": [
+        "LC-024",
+        "LC-013",
+        "LC-015"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "mvp"
+    },
+    {
+      "id": "LC-026",
+      "title": "Add review resolutions and safe CSV",
+      "body": "## Goal\nAdd review resolutions and safe CSV within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: filters and acknowledge/retake/override actions. 6h: CSV escaping/export. 6h: end-to-end verification and format documentation.\n\n## Outputs\n`src/ui/resolutions.ts`, `src/export/csv.ts`, `tests/csv.test.ts`, `tests/e2e/resolutions.spec.ts`, `docs/REPORT_FORMAT.md`.\n\n## Acceptance and validation\nOverrides cannot alter engine results; filters retain all records. Test quotes/newlines/formula prefixes and JSON/CSV count consistency on mixed states.\n\n## Dependencies\nLC-025, LC-015\n\n## Pitfalls\nNo persistence or conversion of review decisions into training labels. Exported text is untrusted; slices are included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-026.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 20,
+      "milestone": "M5",
+      "depends_on": [
+        "LC-025",
+        "LC-015"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "mvp"
+    },
+    {
+      "id": "LC-027",
+      "title": "Version internal policies and document MVP",
+      "body": "## Goal\nVersion internal policies and document MVP within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: bounded validated numeric policy editor. 6h: policy hash/version invalidation tests. 6h: generated-catalog walkthrough and review.\n\n## Outputs\n`src/ui/policy-editor.ts`, `src/policy/load.ts`, `tests/policy-import.test.ts`, `docs/MVP_GUIDE.md`.\n\n## Acceptance and validation\nUnknown versions/out-of-range values reject; edits invalidate stale results without rewriting history. Saved policy reproduces outputs; complete the generated catalog flow.\n\n## Dependencies\nLC-026, LC-023\n\n## Pitfalls\nCustom thresholds are assumptions, not official marketplace requirements. No arbitrary executable rules; child slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-027.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 20,
+      "milestone": "M5",
+      "depends_on": [
+        "LC-026",
+        "LC-023"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "mvp"
+    },
+    {
+      "id": "LC-028",
+      "title": "Harden browser and low-resource behavior",
+      "body": "## Goal\nHarden browser and low-resource behavior within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: Chromium/Firefox matrix. 8h: bounded compatibility or 512-pixel/10-file fallback fixes. 8h: regression and supported-profile documentation.\n\n## Outputs\n`tests/e2e/compatibility.spec.ts`, `policies/low-resource-v1.json`, `docs/SUPPORTED_ENVIRONMENTS.md`, `reports/compatibility.md`.\n\n## Acceptance and validation\nRecord exact browsers/device; test orientation/alpha/subpath/export/cancel and soak. Alternate profiles receive fresh measurement evidence rather than silently inherited thresholds.\n\n## Dependencies\nLC-025, LC-026, LC-027\n\n## Pitfalls\nColor management/decoders differ; no untested mobile or Safari claim. Reference exactness differs from portability tolerance; slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-028.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 24,
+      "milestone": "M6",
+      "depends_on": [
+        "LC-025",
+        "LC-026",
+        "LC-027"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "readiness"
+    },
+    {
+      "id": "LC-029",
+      "title": "Prepare pilot protocol and generated tasks",
+      "body": "## Goal\nPrepare pilot protocol and generated tasks within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: consent/protocol drafts. 8h: generated 20-image task packs and measurement automation. 8h: disclosed rehearsal and corrections.\n\n## Outputs\n`docs/pilot/PROTOCOL.md`, `docs/pilot/CONSENT.md`, `docs/pilot/MEASUREMENTS.csv`, `data/config/pilot-packs.json`, `reports/pilot-dry-run.md`.\n\n## Acceptance and validation\nCounterbalanced manual/assisted tasks, exact labels and predeclared utility gate verified. Protocol includes no-participant branch and needs no private data or user labels.\n\n## Dependencies\nLC-002, LC-026, LC-027\n\n## Pitfalls\nNo outreach without authority; internal rehearsal is not customer evidence or paid annotation. Slices are inclusive.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-029.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 24,
+      "milestone": "M6",
+      "depends_on": [
+        "LC-002",
+        "LC-026",
+        "LC-027"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "validation"
+    },
+    {
+      "id": "LC-030",
+      "title": "Audit pilot readiness",
+      "body": "## Goal\nAudit pilot readiness within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: reconcile readiness, privacy and support evidence. 8h: package pilot build, run generated-catalog acceptance and hand off.\n\n## Outputs\n`docs/pilot/READINESS.md`, `docs/releases/v0.2.md`, `reports/readiness-audit.md`.\n\n## Acceptance and validation\nBatch/export/compatibility/security checklist passes or unsupported mode is excluded explicitly. Reviewer verifies evidence links and targeted regressions after final changes.\n\n## Dependencies\nLC-028, LC-029, LC-022\n\n## Pitfalls\nPilot-ready describes technical readiness, not adoption. Missing customer participation cannot block this package; child slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-030.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 16,
+      "milestone": "M6",
+      "depends_on": [
+        "LC-028",
+        "LC-029",
+        "LC-022"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "readiness"
+    },
+    {
+      "id": "LC-031",
+      "title": "Run bounded use-case validation",
+      "body": "## Goal\nRun bounded use-case validation within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: authorized coordination or desk research. 8h: optional operator sessions or disclosed self-runs. 8h: paired outcome analysis. 8h: limitations/report review.\n\n## Outputs\n`docs/pilot/SESSION_LOG.md`, `reports/pilot/outcomes.json`, `reports/pilot/limitations.md`.\n\n## Acceptance and validation\nRecord actual n, task order/time/misses/overrides and willingness to repeat. Validate paired records; zero participants explicitly means customer validation not obtained.\n\n## Dependencies\nLC-029, LC-030\n\n## Pitfalls\nGenerated tasks do not prove real-catalog performance; no private-photo collection or labeling. Preserve consent/anonymity; all slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-031.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 32,
+      "milestone": "M7",
+      "depends_on": [
+        "LC-029",
+        "LC-030"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "validation"
+    },
+    {
+      "id": "LC-032",
+      "title": "Assess value and commercial stop/go",
+      "body": "## Goal\nAssess value and commercial stop/go within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: evidence-quality review. 8h: workload/support-cost comparison. 8h: pricing hypotheses/options. 8h: decision and documentation review.\n\n## Outputs\n`docs/product/VALUE_CASE.md`, `reports/product/decision-m7.md`, `docs/product/ASSUMPTIONS.md`.\n\n## Acceptance and validation\nRecompute utility gate from records: >=20% median time reduction, no observed extra hard misses, two willing repeat users. Missing external evidence forces unvalidated-prototype status.\n\n## Dependencies\nLC-031, LC-018, LC-030\n\n## Pitfalls\nSmall generated-task studies cannot establish reliability or willingness to pay. No acceptance guarantees; child slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-032.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 32,
+      "milestone": "M7",
+      "depends_on": [
+        "LC-031",
+        "LC-018",
+        "LC-030"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "validation"
+    },
+    {
+      "id": "LC-033",
+      "title": "Perform one bounded improvement cycle",
+      "body": "## Goal\nPerform one bounded improvement cycle within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: prioritize at most two recorded failures. 8h: first bounded fix. 8h: second fix or domain narrowing. 8h: fresh evaluation and release notes.\n\n## Outputs\n`reports/iteration/selection.md`, `data/config/holdout-v2.json`, `reports/holdout-v2/report.md`, `docs/releases/v0.3.md`.\n\n## Acceptance and validation\nEvery change links to evidence within existing contracts. Threshold changes use untouched holdout-v2; run affected regressions and B0/current/new comparisons, documenting rollback if gates fail.\n\n## Dependencies\nLC-019, LC-028, LC-032\n\n## Pitfalls\nNo new model/service/data dependency or endless tuning. Synthetic gains do not prove commercial value; slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-033.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 32,
+      "milestone": "M8",
+      "depends_on": [
+        "LC-019",
+        "LC-028",
+        "LC-032"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "iteration"
+    },
+    {
+      "id": "LC-034",
+      "title": "Establish sustainable demo operations",
+      "body": "## Goal\nEstablish sustainable demo operations within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: seed/version triage templates. 8h: dependency/license review. 8h: rollback/incident drills. 8h: support/runbook handoff.\n\n## Outputs\n`docs/OPERATIONS.md`, `.github/ISSUE_TEMPLATE/bug_report.yml`, `docs/INCIDENTS.md`, `reports/operations-drill.md`, `THIRD_PARTY_NOTICES.md`.\n\n## Acceptance and validation\nRehearse bad policy, missing worker asset, unsafe dependency and timeout; restore last artifact/policy. Document monthly-review ownership/timebox and ensure logs lack images/EXIF.\n\n## Dependencies\nLC-024, LC-030\n\n## Pitfalls\nNo private-image upload request, 24/7 SLA or indefinitely funded maintenance. Child slices are included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-034.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 32,
+      "milestone": "M8",
+      "depends_on": [
+        "LC-024",
+        "LC-030"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "operations"
+    },
+    {
+      "id": "LC-035",
+      "title": "Independently audit technical completion",
+      "body": "## Goal\nIndependently audit technical completion within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: clean build/evaluation. 8h: rights/security audit. 8h: claims/result reconciliation. 8h: final package and independent review.\n\n## Outputs\n`reports/final/REPRODUCIBILITY.md`, `reports/final/RIGHTS_AUDIT.md`, `reports/final/SCORECARD.md`, `docs/releases/v1.0-prototype.md`.\n\n## Acceptance and validation\nReviewer runs demo/eval without private data or paid accounts; all milestone evidence reachable. Execute clean command sequence, targeted portability checks and manifest/claim audit.\n\n## Dependencies\nLC-033, LC-034, LC-032\n\n## Pitfalls\nOptional evidence may remain unavailable; version naming is not production certification. Never invent missing results; slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-035.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 32,
+      "milestone": "M9",
+      "depends_on": [
+        "LC-033",
+        "LC-034",
+        "LC-032"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "closure"
+    },
+    {
+      "id": "LC-036",
+      "title": "Reconcile budget and hand off final decision",
+      "body": "## Goal\nReconcile budget and hand off final decision within the approved ListCheck scope.\n\n## Steps / included child slices\n8h: hours/reserve reconciliation. 8h: operator/agent handoff. 8h: final artifact/docs review and authorized publication or blocker record. 8h: stop/go and maintenance/freeze instructions.\n\n## Outputs\n`docs/HANDOFF.md`, `reports/final/DECISION.md`, `planning/status.json`, `README.md`, `CHANGELOG.md`.\n\n## Acceptance and validation\nRun budget/DAG and evidence-link audits. Finish by planned month 10, absolute month 12; reconcile 640-hour cap and actual publication status.\n\n## Dependencies\nLC-035\n\n## Pitfalls\nNo reserve double count or implicit extra-year capacity. Commercial continuation needs evidence and separate budget; child slices included.\n\n## Review evidence\nRecord commands, exit codes, artifact links, actual hours and reviewer findings in `docs/reviews/LC-036.md`. Estimate includes checks, review and docs; reserve is separate.",
+      "estimate_hours": 32,
+      "milestone": "M9",
+      "depends_on": [
+        "LC-035"
+      ],
+      "labels": [
+        "type:epic",
+        "priority:P1"
+      ],
+      "phase": "closure"
+    }
+  ]
+}
